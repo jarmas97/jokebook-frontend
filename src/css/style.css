@@ -39,6 +39,11 @@ label {
     padding: 7px;
 }
 
+img {
+    height: 100px;
+    width: 100px;
+}
+
 .link-container {
     display: inline-flex;
 }

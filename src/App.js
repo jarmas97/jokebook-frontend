@@ -1,6 +1,7 @@
 import './css/style.css';
 import React, {Component} from 'react'
 import Joke from "./Joke"
+import User from "./User"
 
 import facebook_icon from "./images/facebook_icon.png"
 import instagram_icon from "./images/instagram_icon.png"
@@ -12,15 +13,23 @@ import logo from "./images/logo.png"
 class App extends Component {
   
   state = {
-    data: []
+    jokes: [],
+    users: []
   }
 
   componentDidMount() {
+
     fetch("http://localhost:8080/jokes")
     .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      this.setState({data})
+    .then(jokes => {
+      console.log(jokes);
+      this.setState({jokes})
+    });
+
+    fetch("http://localhost:8080/users")
+    .then(response => response.json())
+    .then(users => {
+      this.setState({users})
     });
   }
 
@@ -29,39 +38,39 @@ class App extends Component {
 
       <div>
         
-         <div class="wrapper">
+         <div className="wrapper">
 
-          <div class="header">
+          <div className="header">
 
-            <div class="header-container">
+            <div className="header-container">
 
-              <a class="link-container" href="">
-                <div class="logo" style={{ backgroundImage: `url(${logo})`}}></div>
+              <a className="link-container" href="">
+                <div className="logo" style={{ backgroundImage: `url(${logo})`}}></div>
               </a>
 
             </div>
               
           </div>
 
-          <div class="tabs-header">
+          <div className="tabs-header">
 
-            <div class="tabs-header-container">
-              <a href="" class="tab">STONA GŁÓWNA</a>
-              <a href="" class="tab">O NAS</a>
-              <a href="" class="tab">KONTAKT</a>
+            <div className="tabs-header-container">
+              <a href="" className="tab">STONA GŁÓWNA</a>
+              <a href="" className="tab">O NAS</a>
+              <a href="" className="tab">KONTAKT</a>
             </div>
               
-            <div class="login-form-header">
-              <a href="" class="tab">ZALOGUJ</a>
-              <a href="" class="tab">ZAREJESTUJ</a>
+            <div className="login-form-header">
+              <a href="" className="tab">ZALOGUJ</a>
+              <a href="" className="tab">ZAREJESTUJ</a>
             </div>
               
           </div>
 
-          <div class="content">
+          <div className="content">
             
             <div>
-              {this.state.data.map(joke => <Joke info={joke}/>)}
+              {this.state.jokes.map(joke => <Joke data={joke}/>)}
             </div>
 
 
@@ -89,24 +98,24 @@ class App extends Component {
 
         </div>
 
-        <div class="footer">
+        <div className="footer">
 
-          <div class="footer-container">
+          <div className="footer-container">
 
-            <a class="link-container" href="https://www.facebook.com/profile.php?id=100084885444881">
-              <div class="image" style={{ backgroundImage: `url(${facebook_icon})`}}></div>
+            <a className="link-container" href="https://www.facebook.com/profile.php?id=100084885444881">
+              <div className="image" style={{ backgroundImage: `url(${facebook_icon})`}}></div>
             </a> &nbsp;
 
-            <a class="link-container" href="https://www.youtube.com/channel/UCw_TlbdOpOdaLO30sx2K_ZA">
-              <div class="image" style={{ backgroundImage: `url(${youtube_icon})`}}></div>
+            <a className="link-container" href="https://www.youtube.com/channel/UCw_TlbdOpOdaLO30sx2K_ZA">
+              <div className="image" style={{ backgroundImage: `url(${youtube_icon})`}}></div>
             </a> &nbsp;
 
-            <a class="link-container" href="https://www.instagram.com/jokebook.smile/">
-              <div class="image" style={{ backgroundImage: `url(${instagram_icon})`}}></div>
+            <a className="link-container" href="https://www.instagram.com/jokebook.smile/">
+              <div className="image" style={{ backgroundImage: `url(${instagram_icon})`}}></div>
             </a> &nbsp;
 
-            <a class="link-container" href="https://twitter.com/BookJoke">
-              <div class="image" style={{ backgroundImage: `url(${twitter_icon})`}}></div>
+            <a className="link-container" href="https://twitter.com/BookJoke">
+              <div className="image" style={{ backgroundImage: `url(${twitter_icon})`}}></div>
             </a> &nbsp;
 
             <br></br>
