@@ -3,14 +3,16 @@ import React, {Component} from "react";
 class Joke extends Component{
 
     render() {
-
-        var photoURL = "http://localhost:8080/profile-picture?userId=" + this.props.data.owner.id;
-
+        
         return (
             <div>
                 <div>{this.props.data.content}</div>
-                <img src={photoURL}/>
-                <div>{this.props.data.owner.username}</div>
+                
+                <div className="profile-picture" style=
+                {{ backgroundImage: `url(${"http://localhost:8080/profile-picture?id=" + this.props.data.user.pictureId})`}}
+                ></div>
+
+                <div>{this.props.data.user.username}</div>
             </div>
         );
     }

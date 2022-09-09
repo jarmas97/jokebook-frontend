@@ -39,11 +39,6 @@ label {
     padding: 7px;
 }
 
-img {
-    height: 100px;
-    width: 100px;
-}
-
 .link-container {
     display: inline-flex;
 }
@@ -164,6 +159,8 @@ button {
     color: var(--font-color-dark);
     width: 70%;
     background-color: var(--content-bg-color);
+    font-size: 15px;
+    word-break: break-word;
 }
 
 .footer {
@@ -186,6 +183,12 @@ button {
 .sign-up-form-row input {
 
     width: 150px;
+}
+
+.profile-picture {
+    background-size: cover;
+    width: 80px;
+    height: 80px;
 }
 
 /* -------------------------------------- RESPONSIVE --------------------------------------*/
