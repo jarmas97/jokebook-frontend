@@ -1,9 +1,11 @@
 import React, {Component} from "react";
+import { SERVER_URL } from './constants';
+
 
 class Joke extends Component{
 
     render() {
-        var photoURL = "http://localhost:8080/profile-picture?id=" + this.props.data.pictureId;
+        var photoURL = SERVER_URL + '/profile-picture?id=' + this.props.data.pictureId;
         return (
             <div>
                 <img src={photoURL}/>

@@ -1,19 +1,21 @@
 import React, {Component} from "react";
+import { SERVER_URL } from './constants';
+
 
 class Joke extends Component{
 
     render() {
         
         return (
-            <div>
-                <div>{this.props.data.content}</div>
-                
-                <div className="profile-picture" style=
-                {{ backgroundImage: `url(${"http://localhost:8080/profile-picture?id=" + this.props.data.user.pictureId})`}}
-                ></div>
-
-                <div>{this.props.data.user.username}</div>
-            </div>
+            <div className="joke-wrapper">
+                <div className="joke-author-wrapper">
+                    <div className="joke-profile-picture" style=
+                    {{ backgroundImage: `url(${SERVER_URL + '/profile-picture?id=' + this.props.data.user.pictureId})`}}
+                    ></div>
+                    <div className="joke-author">{this.props.data.user.username}</div>
+                </div>
+                <div className="joke-content">{this.props.data.content}</div>
+            </div>  
         );
     }
 }

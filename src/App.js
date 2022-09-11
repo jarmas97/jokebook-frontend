@@ -2,6 +2,7 @@ import './css/style.css';
 import React, {Component} from 'react'
 import Joke from "./Joke"
 import User from "./User"
+import { SERVER_URL } from './constants';
 
 import facebook_icon from "./images/facebook_icon.png"
 import instagram_icon from "./images/instagram_icon.png"
@@ -19,14 +20,14 @@ class App extends Component {
 
   componentDidMount() {
 
-    fetch("http://localhost:8080/jokes")
+    fetch(SERVER_URL + '/jokes')
     .then(response => response.json())
     .then(jokes => {
       console.log(jokes);
       this.setState({jokes})
     });
 
-    fetch("http://localhost:8080/users")
+    fetch(SERVER_URL + '/users')
     .then(response => response.json())
     .then(users => {
       this.setState({users})
@@ -118,7 +119,6 @@ class App extends Component {
               <div className="image" style={{ backgroundImage: `url(${twitter_icon})`}}></div>
             </a> &nbsp;
 
-            <br></br>
             <br></br>
 
               Copyright© 2022 All Rights Reserved
