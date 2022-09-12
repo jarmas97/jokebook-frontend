@@ -10,5 +10,4 @@ https://jokebook-frontend.herokuapp.com/
 This project uses project (https://github.com/jarmas97/jokebook-backend) as a source of data.
 
 ## Created with
-- JavaScript | HTML | CSS
-- React
+- JavaScript (React) | HTML | CSS
