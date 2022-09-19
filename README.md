@@ -1,4 +1,4 @@
-# JOKEBOOK (FRONTEND PART)
+# JOKEBOOK (FRONTEND)
 
 ## Description
 A simple web application used to post and rate various types of jokes.
