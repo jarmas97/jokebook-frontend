@@ -10,6 +10,7 @@ export default function() {
     return(
 
         <div className="footer">
+
             <div className="footer-container">
 
                 <a className="link-container" href="https://www.facebook.com/profile.php?id=100084885444881">
